@@ -21,25 +21,27 @@ const KEY_FILES: CodeFile[] = [
   "version": "1.0.0",
   "type": "module",
   "scripts": {
+    "start": "vite",
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
+    "bootstrap": "^5.3.3",
+    "bootstrap-icons": "^1.11.3",
+    "lucide-react": "^0.546.0",
+    "motion": "^12.23.24",
     "react": "^19.0.1",
     "react-dom": "^19.0.1",
-    "react-router-dom": "^7.13.0",
-    "lucide-react": "^0.546.0",
-    "motion": "^12.23.24"
+    "react-router-dom": "^7.18.4",
+    "vite": "^8.3.0"
   },
   "devDependencies": {
-    "@tailwindcss/vite": "^4.3.3",
+    "@types/node": "^22.14.0",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "@vitejs/plugin-react": "^6.1.1",
-    "tailwindcss": "^4.3.3",
-    "typescript": "^7.0.2",
-    "vite": "^8.3.0"
+    "typescript": "^7.0.2"
   }
 }`
   },

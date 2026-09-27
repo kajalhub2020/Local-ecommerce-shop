@@ -1,8 +1,22 @@
 # LocalStore — Local Shop E-commerce SaaS
 
-A comprehensive, production-grade frontend SaaS application for local/neighborhood merchants and boutique retail stores. Built with **React, TypeScript, React Router, Tailwind CSS, Bootstrap 5, Context API, and localStorage persistence**.
+A comprehensive, production-grade frontend SaaS application for local/neighborhood merchants and boutique retail stores. Built with **React, TypeScript, React Router, Bootstrap 5, Custom CSS, Context API, and localStorage persistence** (No Tailwind dependencies).
 
 ---
+
+## 🚀 Quick Start in VS Code
+
+```bash
+# 1. Extract the downloaded ZIP
+# 2. Open the folder in VS Code
+# 3. Install dependencies
+npm install
+
+# 4. Start local development server (both scripts work)
+npm start
+# or
+npm run dev
+```
 
 ## 🌟 Architecture & Application Areas
 
