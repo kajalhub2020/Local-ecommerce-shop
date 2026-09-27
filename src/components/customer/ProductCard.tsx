@@ -190,10 +190,10 @@ export const ProductCard: React.FC<ProductCardProps> = ({
 
   // Grid view (Standard)
   return (
-    <div className="group bg-white rounded-xl border border-slate-200/80 overflow-hidden flex flex-col hover:border-slate-300 hover:shadow-sm transition-all duration-200">
+    <div className="luxury-card overflow-hidden d-flex flex-column h-100 group position-relative">
       {/* Product Image Stage */}
-      <div className="relative aspect-[4/5] bg-slate-50 overflow-hidden">
-        <Link to={`/products/${product.id}`} className="block w-full h-full">
+      <div className="position-relative aspect-[4/5] bg-slate-50 overflow-hidden">
+        <Link to={`/products/${product.id}`} className="d-block w-100 h-100">
           <ImageWithFallback
             src={product.images[0]}
             alt={product.name}
@@ -203,8 +203,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({
 
         {/* Discount Badge */}
         {discountPercent > 0 && (
-          <div className="absolute top-2.5 left-2.5 z-10">
-            <span className="text-[10px] font-bold uppercase tracking-wider bg-slate-900 text-white px-2 py-0.5 rounded shadow-sm">
+          <div className="position-absolute top-2 start-2 z-10">
+            <span className="text-[10px] font-bold uppercase tracking-wider bg-slate-950 text-amber-300 px-2 py-0.5 rounded shadow-sm border border-slate-800">
               {discountPercent}% OFF
             </span>
           </div>
@@ -213,10 +213,10 @@ export const ProductCard: React.FC<ProductCardProps> = ({
         {/* Wishlist Button */}
         <button
           onClick={handleWishlistToggle}
-          className={`absolute top-2.5 right-2.5 z-10 w-8 h-8 rounded-full flex items-center justify-center transition-all ${
+          className={`position-absolute top-2 end-2 z-10 w-8 h-8 rounded-full d-flex align-items-center justify-content-center transition-all ${
             inWishlist
               ? 'bg-white text-rose-500 shadow-md'
-              : 'bg-white/80 backdrop-blur-sm text-slate-500 hover:text-rose-500 hover:bg-white shadow-sm'
+              : 'bg-white/90 backdrop-blur-sm text-slate-500 hover:text-rose-500 hover:bg-white shadow-sm'
           }`}
           aria-label={inWishlist ? 'Remove from wishlist' : 'Add to wishlist'}
         >
@@ -225,10 +225,10 @@ export const ProductCard: React.FC<ProductCardProps> = ({
 
         {/* Quick View Hover Button */}
         {onQuickView && (
-          <div className="absolute inset-x-3 bottom-3 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-200 hidden sm:block">
+          <div className="position-absolute bottom-2 start-2 end-2 z-10 d-none d-sm-block opacity-0 group-hover:opacity-100 transition-opacity duration-200">
             <button
               onClick={handleQuickViewClick}
-              className="w-full py-2 bg-white/95 backdrop-blur text-slate-900 text-xs font-semibold rounded-lg shadow-md hover:bg-white flex items-center justify-center gap-1.5 transition-all"
+              className="w-100 py-2 bg-white/95 backdrop-blur text-slate-900 text-xs font-semibold rounded-lg shadow-md hover:bg-white d-flex align-items-center justify-content-center gap-1.5 transition-all"
             >
               <Eye className="w-3.5 h-3.5" />
               <span>Quick View</span>
@@ -238,10 +238,10 @@ export const ProductCard: React.FC<ProductCardProps> = ({
       </div>
 
       {/* Details */}
-      <div className="p-4 flex-1 flex flex-col justify-between">
+      <div className="p-3 sm:p-4 flex-1 d-flex flex-column justify-content-between bg-white">
         <div>
-          <div className="flex items-center justify-between text-xs text-slate-400 font-medium mb-1">
-            <span className="uppercase tracking-wider">{product.category}</span>
+          <div className="d-flex align-items-center justify-content-between text-[11px] text-slate-400 font-medium mb-1">
+            <span className="uppercase tracking-widest">{product.category}</span>
             <span
               className={`font-semibold ${
                 isOutOfStock
@@ -257,32 +257,32 @@ export const ProductCard: React.FC<ProductCardProps> = ({
 
           <Link
             to={`/products/${product.id}`}
-            className="text-sm font-semibold text-slate-900 hover:text-slate-700 transition-colors line-clamp-1"
+            className="text-sm font-semibold text-slate-900 hover:text-slate-700 transition-colors line-clamp-1 text-decoration-none"
             title={product.name}
           >
             {product.name}
           </Link>
 
           {/* Rating */}
-          <div className="flex items-center gap-1 mt-1.5">
+          <div className="d-flex align-items-center gap-1 mt-1">
             <Star className="w-3.5 h-3.5 text-amber-500 fill-amber-500" />
             <span className="text-xs font-semibold text-slate-800 tabular-nums">
               {product.rating}
             </span>
-            <span className="text-xs text-slate-400 tabular-nums">
+            <span className="text-[11px] text-slate-400 tabular-nums">
               ({product.reviewsCount})
             </span>
           </div>
         </div>
 
         {/* Price & Add to Cart button */}
-        <div className="pt-3 mt-3 border-t border-slate-100 flex items-center justify-between gap-2">
-          <div className="flex flex-col">
-            <span className="text-base font-bold text-slate-900 tabular-nums">
+        <div className="pt-3 mt-3 border-top border-slate-100 d-flex align-items-center justify-content-between gap-2">
+          <div className="d-flex flex-column">
+            <span className="text-base font-bold text-slate-950 tabular-nums">
               ₹{(product.discountPrice || product.price).toLocaleString()}
             </span>
             {product.discountPrice && product.discountPrice < product.price && (
-              <span className="text-xs text-slate-400 line-through tabular-nums -mt-0.5">
+              <span className="text-[11px] text-slate-400 line-through tabular-nums -mt-0.5">
                 ₹{product.price.toLocaleString()}
               </span>
             )}
@@ -291,24 +291,24 @@ export const ProductCard: React.FC<ProductCardProps> = ({
           <button
             onClick={handleAddToCart}
             disabled={isOutOfStock}
-            className={`p-2 sm:px-3 sm:py-2 text-xs font-medium rounded-lg transition-all flex items-center justify-center gap-1.5 ${
+            className={`p-2 sm:px-3 sm:py-2 text-xs font-semibold rounded-lg transition-all d-flex align-items-center justify-content-center gap-1.5 ${
               isAdded
                 ? 'bg-emerald-600 text-white'
                 : isOutOfStock
                 ? 'bg-slate-100 text-slate-400 cursor-not-allowed'
-                : 'bg-slate-900 text-white hover:bg-slate-800 shadow-sm'
+                : 'bg-slate-950 text-white hover:bg-slate-800 shadow-sm'
             }`}
             aria-label="Add to cart"
           >
             {isAdded ? (
               <>
-                <Check className="w-4 h-4" />
-                <span className="hidden sm:inline">Added</span>
+                <Check className="w-3.5 h-3.5" />
+                <span className="d-none d-sm-inline">Added</span>
               </>
             ) : (
               <>
-                <ShoppingBag className="w-4 h-4" />
-                <span className="hidden sm:inline">Add</span>
+                <ShoppingBag className="w-3.5 h-3.5" />
+                <span className="d-none d-sm-inline">Add</span>
               </>
             )}
           </button>

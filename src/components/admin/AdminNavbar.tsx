@@ -26,26 +26,26 @@ export const AdminNavbar: React.FC<AdminNavbarProps> = ({ onToggleSidebar }) => 
       : pathParts[1].charAt(0).toUpperCase() + pathParts[1].slice(1);
 
   return (
-    <header className="sticky top-0 z-30 bg-white border-b border-slate-200 h-16 flex items-center justify-between px-4 sm:px-8">
+    <header className="sticky top-0 z-30 bg-white border-b border-slate-200 h-16 flex items-center justify-between px-3 sm:px-6 lg:px-8">
       {/* Left: Mobile hamburger & Context breadcrumbs */}
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-2.5 sm:gap-4 min-w-0">
         <button
           onClick={onToggleSidebar}
-          className="lg:hidden p-2 text-slate-600 hover:text-slate-900 rounded-lg hover:bg-slate-100"
+          className="lg:hidden p-2 text-slate-600 hover:text-slate-900 rounded-lg hover:bg-slate-100 shrink-0"
           aria-label="Open sidebar menu"
         >
           <Menu className="w-5 h-5" />
         </button>
 
-        <div className="flex items-center gap-2 text-xs sm:text-sm">
-          <span className="text-slate-400 font-medium">Urban Style Shop Admin</span>
-          <ChevronRight className="w-3.5 h-3.5 text-slate-300" />
-          <span className="font-semibold text-slate-800">{currentTitle}</span>
+        <div className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm min-w-0">
+          <span className="text-slate-400 font-medium hidden sm:inline truncate">Urban Style Shop Admin</span>
+          <ChevronRight className="w-3.5 h-3.5 text-slate-300 hidden sm:inline shrink-0" />
+          <span className="font-semibold text-slate-800 truncate">{currentTitle}</span>
         </div>
       </div>
 
       {/* Right: Quick actions, notifications & profile */}
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-2 sm:gap-3 shrink-0">
         {/* Storefront Link */}
         <Link
           to="/"
@@ -71,7 +71,7 @@ export const AdminNavbar: React.FC<AdminNavbarProps> = ({ onToggleSidebar }) => 
           </button>
 
           {showNotifications && (
-            <div className="absolute right-0 mt-2 w-80 bg-white rounded-xl shadow-xl border border-slate-200 py-2 z-50 animate-in fade-in zoom-in-95">
+            <div className="absolute right-0 mt-2 w-72 sm:w-80 max-w-[calc(100vw-2rem)] bg-white rounded-xl shadow-xl border border-slate-200 py-2 z-50 animate-in fade-in zoom-in-95">
               <div className="px-4 py-2 border-b border-slate-100 flex items-center justify-between">
                 <span className="text-xs font-bold text-slate-900 uppercase tracking-wider">
                   Store Notifications

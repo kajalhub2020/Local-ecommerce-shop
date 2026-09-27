@@ -18,32 +18,32 @@ export const SuperAdminNavbar: React.FC<SuperAdminNavbarProps> = ({ onToggleSide
       : pathParts[1].charAt(0).toUpperCase() + pathParts[1].slice(1);
 
   return (
-    <header className="sticky top-0 z-30 bg-white border-b border-slate-200 h-16 flex items-center justify-between px-4 sm:px-8">
-      <div className="flex items-center gap-4">
+    <header className="sticky top-0 z-30 bg-white border-b border-slate-200 h-16 flex items-center justify-between px-3 sm:px-6 lg:px-8">
+      <div className="flex items-center gap-2.5 sm:gap-4 min-w-0">
         <button
           onClick={onToggleSidebar}
-          className="lg:hidden p-2 text-slate-600 hover:text-slate-900 rounded-lg hover:bg-slate-100"
+          className="lg:hidden p-2 text-slate-600 hover:text-slate-900 rounded-lg hover:bg-slate-100 shrink-0"
           aria-label="Open sidebar"
         >
           <Menu className="w-5 h-5" />
         </button>
 
-        <div className="flex items-center gap-2 text-xs sm:text-sm">
-          <span className="text-emerald-700 font-semibold flex items-center gap-1.5">
+        <div className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm min-w-0">
+          <span className="text-emerald-700 font-semibold flex items-center gap-1.5 shrink-0">
             <ShieldCheck className="w-4 h-4 text-emerald-600" />
-            <span>Super Admin</span>
+            <span className="hidden sm:inline">Super Admin</span>
           </span>
-          <ChevronRight className="w-3.5 h-3.5 text-slate-300" />
-          <span className="font-semibold text-slate-800">{currentTitle}</span>
+          <ChevronRight className="w-3.5 h-3.5 text-slate-300 shrink-0" />
+          <span className="font-semibold text-slate-800 truncate">{currentTitle}</span>
         </div>
       </div>
 
-      <div className="flex items-center gap-3">
-        <span className="text-xs bg-emerald-50 text-emerald-800 font-semibold px-2.5 py-1 rounded-md border border-emerald-200 hidden sm:inline">
+      <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+        <span className="text-xs bg-emerald-50 text-emerald-800 font-semibold px-2.5 py-1 rounded-md border border-emerald-200 hidden md:inline">
           Platform Owner Access
         </span>
-        <div className="flex items-center gap-2.5 pl-2">
-          <div className="w-8 h-8 rounded-full bg-emerald-700 text-white flex items-center justify-center font-bold text-xs">
+        <div className="flex items-center gap-2 sm:gap-2.5 pl-1 sm:pl-2">
+          <div className="w-8 h-8 rounded-full bg-emerald-700 text-white flex items-center justify-center font-bold text-xs shrink-0">
             SA
           </div>
           <div className="hidden md:block text-left">

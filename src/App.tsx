@@ -7,7 +7,6 @@ import { CartProvider } from './context/CartContext';
 
 // Common
 import { RoleSwitcher } from './components/common/RoleSwitcher';
-import { DownloadButton } from './components/common/DownloadButton';
 
 // Customer
 import { CustomerLayout } from './components/customer/CustomerLayout';
@@ -96,9 +95,6 @@ export default function App() {
                 {/* Fallback */}
                 <Route path="*" element={<Navigate to="/" replace />} />
               </Routes>
-
-              {/* Floating Download ZIP Widget */}
-              <DownloadButton />
             </BrowserRouter>
           </CartProvider>
         </AuthProvider>
