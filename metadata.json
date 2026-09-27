@@ -1,0 +1,6 @@
+{
+  "name": "LocalStore — Local Shop E-commerce SaaS",
+  "description": "Multi-tenant local store e-commerce SaaS platform featuring customer storefront, shop admin management, and super admin platform controls.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
