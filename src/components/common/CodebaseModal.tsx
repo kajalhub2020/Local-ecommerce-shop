@@ -34,13 +34,13 @@ const KEY_FILES: CodeFile[] = [
     "react": "^19.0.1",
     "react-dom": "^19.0.1",
     "react-router-dom": "^7.18.4",
-    "vite": "^8.3.0"
+    "vite": "^5.4.14"
   },
   "devDependencies": {
     "@types/node": "^22.14.0",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
-    "@vitejs/plugin-react": "^6.1.1",
+    "@vitejs/plugin-react": "^4.3.4",
     "typescript": "^7.0.2"
   }
 }`
